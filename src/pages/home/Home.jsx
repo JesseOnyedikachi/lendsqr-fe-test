@@ -6,17 +6,27 @@ import Widget from '../../components/widget/Widget'
 import List from '../list/List'
 const Home = () => {
     return (
-        <div className="home">
-            <Sidebar/>
-        <div className="homeContainer">
+        <>
+        
+        <div className='nav'>
             <Navbar/>
-            <div className="widgets">
-                <Widget />
-                
             </div>
-            <List />
-        </div>
+                <div className="home">
+            <div className='side'>
+            <Sidebar/>
+            </div>
+        
+           <div className="homeContainer">
+               <div className='user-head'>
+                   <h3>USERS</h3>
+               </div>
+               <div className="widgets">
+                   <Widget />
+               </div>
+                <List />
+           </div>
        </div>
+        </>
     )
 }
 

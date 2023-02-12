@@ -2,23 +2,30 @@ import React, {useEffect, useState} from 'react'
 import { Link, useSearchParams, useParams } from 'react-router-dom'
 import './list.scss'
 import axios from 'axios'
-
-import { Stack, Box } from '@mui/material'
 import New from '../new/New'
-const List = () => {
+import { useLocation } from 'react-router-dom';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import { DataGrid } from '@mui/x-data-grid';
+const List = ({}) => {
 
+ 
 
-
- const [posts, setPosts] = useState([])
+ const [users, setUsers] = useState([])
   useEffect(() => {
     axios.get("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
-    .then(res => {
-      console.log(res)
-      setPosts(res.data)
+    .then(res =>  {
+
+      setUsers(res.data)
+      console.log(res.data)
     })
-    .catch(err => {
-      console.log(err)
-    })
+    
+    
   }, [])
   return (
     <div className="container">
@@ -26,9 +33,9 @@ const List = () => {
         <div className="card-title">
 
         </div>
-        <div className='card-body'>
-        <table className='table table-bordered'>
-        <thead className='bg-dark text-white'> 
+        <div className='cardBody'>
+        <table className='table '>
+        <thead className='bg-light text-black'> 
           <tr>
             <td>ORGANIZATION</td>
             <td>USERNAME</td>
@@ -36,39 +43,39 @@ const List = () => {
             <td>PHONE NUMBER</td>
             <td>Date Joined</td>
             <td>Status</td>
-            <td></td>
-          </tr>
+            </tr>
+        
         </thead>
         <tbody>
-            { 
-               posts.map((post, idx) => (
-                <>
-                <tr key={idx}>
-                  <td>{post.orgName}</td>
-                  <td>{post.userName}</td>
-                  <td>{post.email}</td>
-                  <td>{post.phoneNumber}</td>
-                  <td>{post.createdAt}</td>
-                  <td>active</td>
-                  
-                    <Link to={post.id ?  `/single/${post.id}` :  <New />}>
-                    <td>
-                    <button>...</button>
-                    </td>
-                    </Link>
+            {
+               users && users.map((user) => (
+               
+                  <tr key={user.id}>
                     
+                    <td data-label='Organization'>{user.orgName}</td>
+                    
+                  
+                     <td data-label='Username'>{user.email}</td>
+                     <td data-label='Email'>{user.userName}</td>
+                     <td data-label='Phone Number'>{user.phoneNumber}</td>
+                     <td data-label='Date Joined'>{user.createdAt}</td>
+                     <td data-label='Status'></td>
+                     <Link to={`/users/${user.id}`}>
+
+                     <td>....</td>
+                     </Link>
                   </tr>
-                  <div>
-                    <p></p>
-                  </div>
-                </>
-               ))}
+                
+               ))
+            }
         </tbody>
       </table>
         </div>
       </div>
       
     </div>
+
+    
   )
 }
 

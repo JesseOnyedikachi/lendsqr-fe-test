@@ -15,7 +15,7 @@ function App() {
        <Route path="new" element={<New />}/>
       
         <Route exact path="users" element={<List />} />
-        <Route exact path='/single/:id' element={<Single />} />
+        <Route exact path='/users/:id' element={<Single />} />
   
       
      </Routes>

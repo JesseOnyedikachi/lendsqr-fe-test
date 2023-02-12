@@ -121,16 +121,16 @@ a{
     background: #213F7D;
 }
 }
-  @media(max-width:800px){
-        .welcome{
-            display:flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow-x: hidden;
-        }
-        .background{
-            margin-top: 30%;
-        }
-       
-    }
 }
+@media(max-width:800px){
+      .welcome{
+          display:flex;
+          flex-direction: column;
+          justify-content: space-between;
+          overflow-x: hidden;
+      }
+      .background{
+          margin-top: 30%;
+      }
+     
+  }

@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react'
 import './widget.scss'
 import axios from "axios";
 import Table from '@mui/material/Table';
-import { getUsers } from '../../API'
+import { getUsers } from '../../API/index'
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined'
 const Widget = () => {
 
@@ -21,8 +21,10 @@ const Widget = () => {
  
   return (
     <>
-    <div></div>
+    <div className='w-box'>
+
     <div className="widget">
+    
       <div className="left">
         <PersonOutlinedIcon className="person" />
         <span className='title2'>USERS</span>
@@ -57,27 +59,8 @@ const Widget = () => {
       </div>
       
   </div>
-
-  <Table columns={[
-    {
-    title: "ORGANIZTION",
-    dataIndex: "orgName",
-   },
-   {
-    title: "USERNAME",
-    dataIndex: "userName",
-   },
-   {
-    title: "Guarantor",
-    dataIndex: "guarantor",
-    render: (guarantor) => {
-      return <span>{guarantor.address}, {guarantor.gender}</span>
-    }
-   },
-
-  ]}
-  dataSource={dataSource}
-  ></Table>
+    </div>
+    
     </>
   )
 }

@@ -1,9 +1,23 @@
-.widget {
+.header{
     display: flex;
-    flex: 1;
+    flex-direction: column;
+}
+.w-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    // padding: 30px;
+}
+.widget {
+    margin: 5px;
+    width: 100%;
+    display: flex;
+    // flex-wrap:wrap;
+    flex: 2;
+    // width: 500px;
     padding: 10px;
     justify-content: space-between;
-    box-sizing: border-box;
+    // box-sizing: border-box;
 
 height: 140px;
 
@@ -50,9 +64,9 @@ border-radius: 4px;
         align-self: flex-start;
     }
 
-    .title3{
+    // .title3{
 
-    }
+    // }
     .counter {
         width: 65px;
         height: 28px;
@@ -71,3 +85,13 @@ border-radius: 4px;
     }
 }
 }
+// @media(max-width:700px){
+//     .w-box{
+//         display: flex;
+//         flex-wrap: wrap;
+//         // flex-direction: column;
+//     }
+//     .widget{
+//         width: 50%;
+//     }
+// }

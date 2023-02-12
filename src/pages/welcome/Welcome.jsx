@@ -2,6 +2,7 @@ import React from 'react'
 import './welcome.scss'
 // import  Group from '../assets/Group.jpg'
 // import Pablo from '../assets/pablo-sign-in 1.jpg'
+import { Link } from 'react-router-dom'
 const Welcome = () => {
     return(
         <div className='welcome'>
@@ -21,7 +22,9 @@ const Welcome = () => {
            <input className='input' type="email" placeholder='Email'></input>
            <input className='input' type="password" placeholder='Password'></input>
             <a href='#'>forgot password?</a>
-            <button className='btn'>log in</button>
+            <Link to="/home">
+              <button className='btn'>log in</button>
+            </Link>
         </div>
         </div>
         
