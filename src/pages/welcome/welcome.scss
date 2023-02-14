@@ -4,10 +4,12 @@ body {
   left: 0px;
   top: 0px;
   background: #ffffff;
+  overflow-x: hidden !important;
 }
 .welcome {
   display: grid;
   grid-template-columns: 60% 40%;
+  
 
   .cover {
     padding: 0 60px;
@@ -117,12 +119,41 @@ body {
     }
   }
 }
+
+@media(max-width: 612px) {
+  .cover {
+padding-top: -40px !important;
+
+
+  }
+  .main {
+    height: 50%;
+   .logo {
+          position: relative;
+          left: 50%;
+          transform: translate(50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40% !important;
+      }
+  
+  .background {
+      img {
+          width: 100vw !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+  }
+}
+}
 @media (max-width: 800px) {
   .welcome {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-x: hidden;
+    // overflow-x: hidden;
   }
   .background {
     margin-top: 30%;
