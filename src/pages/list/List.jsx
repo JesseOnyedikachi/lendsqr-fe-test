@@ -33,7 +33,7 @@ const List = ({}) => {
     { field: 'email', headerName: 'EMAIL', width: 250 },
     { field: 'phoneNumber', headerName: 'PHONE NUMBER', width: 200 },
     { field: 'createdAt', headerName: 'DATE JOINED', width: 150, renderCell: params=>moment(params.row.createdAt).format('DD-MM-YYYY') },
-    { field: 'status', headerName: 'STATUS', width: 100, renderCell: params=> <UserActions/> },
+    { field: 'status', headerName: 'STATUS', width: 80, renderCell: params=> <UserActions/> },
     {field:'',renderCell:(users)=>{
       return  <Link to={`/users/${users.id}`} style={{ textDecoration: 'none'}}>
         <div className='dot' style={{
