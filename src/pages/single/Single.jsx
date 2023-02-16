@@ -57,8 +57,8 @@ const Single = () => {
                 <h3>User Details</h3>
                 </div>
                 <div className="userBtn">
-                <button className="blacklist" style={{color:''}}>blacklisted</button>
-                <button className="active">activate</button>
+                <button className="blacklist">blacklist user</button>
+                <button className="active">activate user</button>
                 </div>
               </div>
               <div className="top">

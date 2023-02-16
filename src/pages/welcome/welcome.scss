@@ -1,18 +1,9 @@
-// body{
-//   width: 100vw;
-//   height: 100vh;
-//   left: 0px;
-//   top: 0px;
-//   background: #FFFFFF;
-// }
+
 .welcome{
       display: grid;
       grid-template-columns: 60% 40%;
-      // width:100%;
-
 .cover{
   padding: 0 60px;
-  // width: 600px;
   height: 100vh;
   top: -5px;
   background: #FFFFFF;
@@ -92,7 +83,6 @@ a{
 }
 }
 .main{
-  // width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
